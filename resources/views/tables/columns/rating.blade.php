@@ -77,7 +77,7 @@
             this.draw(this.state);
         @endif
     }
-}">tada
+}">
     <div class="hidden">
         <div x-ref="{{$getRefId('defaultIcon')}}">
             @include('filament-rating-field::forms.components._rating-item', [
