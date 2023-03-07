@@ -29,6 +29,12 @@ class Rating extends Column implements Editable
     use IsCleearable;
     protected string $view = "filament-rating-field::tables.columns.rating";
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->disableClick();
+    }
 
     public function getRefId(string $prefix, ?string $suffix = null): string
     {
