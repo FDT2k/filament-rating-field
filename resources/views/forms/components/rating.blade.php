@@ -22,7 +22,7 @@
         },
         draw(index) {
             let tag1 = $refs['{{$getRefId('defaultIcon')}}'].getElementsByTagName('svg')[0];
-            this.redraw(tag1, {{ $getMax() }});
+            this.redraw(tag1, {{ $getMaxValue() }});
             let tag2 = $refs['{{$getRefId('selectedIcon')}}'].getElementsByTagName('svg')[0];
             this.redraw(tag2, index);
         },
@@ -97,7 +97,7 @@
             </div>
         </div>
         <ul class="ml-auto flex">
-        @for ($i = $getMin(); $i <= $getMax(); $i++)
+        @for ($i = $getMinValue(); $i <= $getMaxValue(); $i++)
             <li
                 class="rating-item"
                 x-on:mouseenter="mouseoverHandler"
