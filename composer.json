@@ -1,14 +1,19 @@
 {
-    "name": "yepsua/filament-rating-field",
-    "description": "Ranting field for the Filament forms",
+    "name": "kda/filament-rating",
+    "description": "Rating field & column for the Filament Forms and Table",
     "keywords": [
         "yepsua",
         "laravel",
         "filament-rating-field"
     ],
-    "homepage": "https://github.com/yepsua/filament-rating-field",
+    "homepage": "https://github.com/fdt2k/filament-rating-field",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Fabien Karsegard",
+            "email": "fabien@karsegard.ch",
+            "role": "Developer"
+        },
         {
             "name": "Omar Yepez",
             "email": "oyepez003@gmail.com",
@@ -18,7 +23,7 @@
     "require": {
         "php": "^8.0",
         "spatie/laravel-package-tools": "^1.9.2",
-        "filament/forms": "^2.0",
+        "filament/filament": "^2.0",
         "illuminate/contracts": "^8.0|^9.0"
     },
     "require-dev": {
@@ -65,5 +70,8 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "replace": {
+        "yepsua/filament-rating-field":"*"
+    }
 }
