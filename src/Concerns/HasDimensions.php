@@ -2,8 +2,10 @@
 
 namespace Yepsua\Filament\Concerns;
 
+use Closure;
+
 trait HasDimensions{
-    protected int | Closure $width = 6;
+   /* protected int | Closure $width = 6;
     protected int | Closure $height = 6;
 
   
@@ -42,5 +44,9 @@ trait HasDimensions{
     public function getSizeClass(): string
     {
         return sprintf('w-%s h-%s', $this->getWidth(), $this->getHeight());
+    }*/
+    public function getSizeClass(): string
+    {
+        return sprintf('w-%s h-%s', 5,5);
     }
 }

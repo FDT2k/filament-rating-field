@@ -1,24 +1,20 @@
-<x-forms::field-wrapper
-    :id="$getId()"
-    :label="$getLabel()"
-    :label-sr-only="$isLabelHidden()"
-    :helper-text="$getHelperText()"
-    :hint="$getHint()"
-    :hint-icon="$getHintIcon()"
-    :required="$isRequired()"
-    :state-path="$getStatePath()"
+
+<x-dynamic-component
+    :component="$getFieldWrapperView()"
+    :field="$field"
 >
     <div x-data="{
         state: $wire.{{ $applyStateBindingModifiers('entangle(\'' . $getStatePath() . '\')') }},
         clickHandler($event) {
-            @if($isDisabled())
+            let disabled = {{ $isDisabled() ? 'true' : 'false' }};
+            if(disabled){
                 return;
-            @else
-                let target = $event.target.dataset.index ?  $event.target : $event.target.closest('.rating-item');
-                let index = target.dataset.index || false;
-                this.state = index;
-                this.draw(index);
-            @endif
+            }
+            
+            let target = $event.target.dataset.index ?  $event.target : $event.target.closest('.rating-item');
+            let index = target.dataset.index || false;
+            this.state = index;
+            this.draw(index);
         },
         draw(index) {
             let tag1 = $refs['{{$getRefId('defaultIcon')}}'].getElementsByTagName('svg')[0];
@@ -123,4 +119,4 @@
             @endif
         </ul>
     </div>
-</x-forms::field-wrapper>
+</x-dynamic-component>
